@@ -1,0 +1,40 @@
+<Page>:
+	background: background
+	
+	AnchorLayout:
+		canvas: 
+			Color: 
+				rgba: 1,1,1,1
+			Rectangle: 
+				size: self.size 
+
+		Scatter:
+			id: background
+
+			do_rotation: False
+			do_translation: False
+			do_scale: True
+			Image:
+				source: root.source
+				width: root.width
+				height: root.height
+				allow_stretch: True
+	
+		AnchorLayout:
+			anchor_x: 'right'			
+			Button:
+				background_normal: 'arrows/scroll-right.png'
+				name: 'nextButton'
+		        size_hint: None, None
+		        pos_hint: {'right': 1}
+		        size: 80, 80
+		        on_release: root.manager.current = root.manager.next()
+
+	    AnchorLayout:
+			anchor_x: 'left'			
+			Button:	
+		    	name: 'prevButton'
+		    	background_normal: 'arrows/scroll-left.png'
+		        size_hint: None, None
+		        size: 80, 80
+		        on_release: root.manager.current = root.manager.previous()

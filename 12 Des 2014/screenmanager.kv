@@ -1,0 +1,311 @@
+#:import Factory kivy.factory.Factory
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+ShowcaseScreen:
+	name: 'ScreenManager'
+	fullscreen: True
+
+	#sm.transition = 'WipeTransition'
+	#text: 'WipeTransition'
+	#on_text: sm.transition = Factory.get(self.text)()
+
+	BoxLayout:
+	#	size_hint_y: None
+	#	height: '200dp'
+	#	AnchorLayout:
+	#		anchor_x: 'right'
+	#		Button: 
+	#			size_hint: None, None
+	#			size: '50dp', '200dp'
+	#			text: '>'
+
+	#	Spinner:
+	#		text: 'Default Transition'
+	#		values: ('SlideTransition', 'SwapTransition', 'FadeTransition','WipeTransition')
+	#		on_text: sm.transition = Factory.get(self.text)()
+
+	ScreenManager:
+		id: sm
+
+		#Peta 1 
+		Screen:
+			name: 'screen1'
+			canvas.before:
+				Rectangle:
+					source: "Photos/1.png"
+					pos: self.pos
+					size: self.size
+				
+
+			AnchorLayout:
+				anchor_x: 'right'
+				Button:
+					#background_normal: 'scroll-right.png'
+					#background_down: 'scroll-right-hit.png'
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '>'
+					on_release: 
+						sm.transition = FadeTransition()
+						#sm.transition.direction='left'
+						sm.current = 'screen2'
+			AnchorLayout:
+				anchor_x: 'left'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '<'
+					on_release: 
+						sm.transition = FadeTransition()
+						#sm.transition.direction='right'
+						sm.current = 'screen9'
+
+
+		#Peta 2
+		Screen:
+			name: 'screen2'
+			canvas.before:
+				Rectangle:
+					source: "Photos/2.png"
+					pos: self.pos
+					size: self.size
+
+			AnchorLayout:
+				anchor_x: 'right'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '>'
+					on_release: 
+						#sm.transition.direction='left'
+						sm.transition = FadeTransition()
+						sm.current = 'screen3'
+			AnchorLayout:
+				anchor_x: 'left'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '<'
+					on_release: 
+						#sm.transition.direction='right'
+						sm.transition = FadeTransition()
+						sm.current = 'screen1'
+
+		#Peta 3
+		Screen:
+			name: 'screen3'
+			canvas.before:
+				Rectangle:
+					source: "Photos/3.png"
+					pos: self.pos
+					size: self.size
+
+			AnchorLayout:
+				anchor_x: 'right'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '>'
+					on_release: 
+						#sm.transition.direction='left'
+						sm.transition = FadeTransition()
+						sm.current = 'screen4'
+			AnchorLayout:
+				anchor_x: 'left'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '<'
+					on_release: 
+						#sm.transition.direction='right'
+						sm.transition = FadeTransition()
+						sm.current = 'screen2'
+
+		#Peta 4
+		Screen:
+			name: 'screen4'
+			canvas.before:
+				Rectangle:
+					source: "Photos/4.png"
+					pos: self.pos
+					size: self.size
+
+			AnchorLayout:
+				anchor_x: 'right'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '>'
+					on_release: 
+						#sm.transition.direction='left'
+						sm.transition = FadeTransition()
+						sm.current = 'screen5'
+			AnchorLayout:
+				anchor_x: 'left'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '<'
+					on_release: 
+						#sm.transition.direction='right'
+						sm.transition = FadeTransition()
+						sm.current = 'screen3'
+
+		#Peta 5
+		Screen:
+			name: 'screen5'
+			canvas.before:
+				Rectangle:
+					source: "Photos/5.png"
+					pos: self.pos
+					size: self.size
+
+			AnchorLayout:
+				anchor_x: 'right'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '>'
+					on_release: 
+						#sm.transition.direction='left'
+						sm.transition = FadeTransition()
+						sm.current = 'screen6'
+			AnchorLayout:
+				anchor_x: 'left'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '<'
+					on_release: 
+						#sm.transition.direction='right'
+						sm.transition = FadeTransition()
+						sm.current = 'screen4'
+
+		#Peta 6 
+		Screen:
+			name: 'screen6'
+			canvas.before:
+				Rectangle:
+					source: "Photos/6.jpg"
+					pos: self.pos
+					size: self.size
+				
+
+			AnchorLayout:
+				anchor_x: 'right'
+				Button:
+					#background_normal: 'scroll-right.png'
+					#background_down: 'scroll-right-hit.png'
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '>'
+					on_release: 
+						sm.transition = FadeTransition()
+						#sm.transition.direction='left'
+						sm.current = 'screen7'
+			AnchorLayout:
+				anchor_x: 'left'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '<'
+					on_release: 
+						sm.transition = FadeTransition()
+						#sm.transition.direction='right'
+						sm.current = 'screen5'
+
+
+		#Peta 7
+		Screen:
+			name: 'screen7'
+			canvas.before:
+				Rectangle:
+					source: "Photos/7.jpg"
+					pos: self.pos
+					size: self.size
+
+			AnchorLayout:
+				anchor_x: 'right'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '>'
+					on_release: 
+						#sm.transition.direction='left'
+						sm.transition = FadeTransition()
+						sm.current = 'screen8'
+			AnchorLayout:
+				anchor_x: 'left'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '<'
+					on_release: 
+						#sm.transition.direction='right'
+						sm.transition = FadeTransition()
+						sm.current = 'screen6'
+
+		#Peta 8
+		Screen:
+			name: 'screen8'
+			canvas.before:
+				Rectangle:
+					source: "Photos/8.jpg"
+					pos: self.pos
+					size: self.size
+
+			AnchorLayout:
+				anchor_x: 'right'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '>'
+					on_release: 
+						#sm.transition.direction='left'
+						sm.transition = FadeTransition()
+						sm.current = 'screen9'
+			AnchorLayout:
+				anchor_x: 'left'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '<'
+					on_release: 
+						#sm.transition.direction='right'
+						sm.transition = FadeTransition()
+						sm.current = 'screen7'
+
+		#Peta 9
+		Screen:
+			name: 'screen9'
+			canvas.before:
+				Rectangle:
+					source: "Photos/9.jpg"
+					pos: self.pos
+					size: self.size
+
+			AnchorLayout:
+				anchor_x: 'right'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '>'
+					on_release: 
+						#sm.transition.direction='left'
+						sm.transition = FadeTransition()
+						sm.current = 'screen1'
+			AnchorLayout:
+				anchor_x: 'left'
+				Button:
+					size_hint: None, None
+					size: '50dp', '48dp'
+					text: '<'
+					on_release: 
+						#sm.transition.direction='right'
+						sm.transition = FadeTransition()
+						sm.current = 'screen8'
+
+		
+
+
+		
